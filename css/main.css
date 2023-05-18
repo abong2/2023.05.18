@@ -1,0 +1,403 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+.menu-bar{
+    width: 1000px;
+    height: 50px;
+background-color: rgb(34, 34, 34);
+}
+.menu-list{
+    list-style: none;
+    float: left;
+    color: aliceblue;
+    margin-right: 20px;
+    padding: 0;
+    display: flex;
+}
+
+.menu-item{
+    margin: 0 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fade-in 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-text .span1{
+    display: inline-block;
+    animation: drop-in1 4s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes drop-in1{
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+.animate-text .span2{
+    display: inline-block;
+    animation: drop-in1 4s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes drop-in1{
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+img{
+    min-height: 100%;
+    max-width: 100%;
+
+}
+.imghoverevent{
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.imghoverevent .imgBox{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+.imghoverevent .hover-box{
+    background: url(../images/KakaoTalk_20230518_114520679_01.jpg) no-repeat center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+}
+.event1 .hover-box{
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 5%,
+        rgba(255,255,255,1) 90%
+    );
+    transform: translateY(60%);
+    transition: 0.5s;
+}
+.event1:hover .hover-box{
+    transform: translateY(0);
+}
+.event2 .imgBox{
+    filter: blur(2px) grayscale(100%);
+    transition: 1s;
+}
+.event2:hover .hover-box{
+    display: none;
+}
+.event3 .hover-box{
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0),rgba(255,255,255,1)
+    );
+    width: 50px;
+    height: 400px;
+    transform: rotateZ(30deg);
+    top: -100px;
+    left: -130px;
+    transition: 0.4s;
+    opacity: 0.5;
+}
+.event3:hover .hover-box{
+    left: 300px;
+    opacity: 1;
+}
+.event4 .line1,
+.event4 .line2,
+.event4 .line3,
+.event4 .line4{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 50px;
+    background: rgba(139, 22, 185, 0.6);
+}
+.event4 .hover-box{
+    opacity: 0;
+}
+.event4:hover .hover-box{
+animation: event41Hover 0.5s linear 1;
+opacity: 1;
+}
+.event4:hover .line1{
+    animation: event41 0.5s steps(6) 1;
+    left: 0;
+    width: 100%;
+}
+.event4:hover .line2{
+    animation: event42 0.5s steps(6) 1;
+    left: 0;
+    width: 100%;
+    top: 50px;
+}
+.event4:hover .line3{
+    animation: event43 0.5s steps(6) 1;
+    left: 0;
+    width: 100%;
+    top: 100px;
+}
+.event4:hover .line4{
+    animation: event44 0.5s steps(6) 1;
+    left: 0;
+    width: 100%;
+    top: 150px;
+}
+@keyframes event41{
+    0%{
+        width: 0%;
+        left: 50%;
+    }
+        
+    100%{
+        width: 100%;
+        left: 0%;
+    }
+        
+}
+@keyframes event42{
+    0%{
+        width: 0%;
+        left: 50%;
+    }
+    30%{
+        width: 0%;
+        left: 50%;
+    }    
+    100%{
+        width: 100%;
+        left: 0%;
+    }
+        
+}
+@keyframes event43{
+    0%{
+        width: 0%;
+        left: 50%;
+    }
+    50%{
+        width: 0%;
+        left: 50%;
+    }    
+    100%{
+        width: 100%;
+        left: 0%;
+    }
+        
+}
+@keyframes event44{
+    0%{
+        width: 0%;
+        left: 50%;
+    }
+    70%{
+        width: 0%;
+        left: 50%;
+    }    
+    100%{
+        width: 100%;
+        left: 0%;
+    }
+        
+}
+@keyframes event41Hover{
+0%{
+    opacity: 0;
+}
+70%{
+opacity: 0;
+}
+100%{
+    opacity: 1;
+}
+}
+.event5 .imgBox{
+    transform-origin:0% 0% ;
+}
+.event5 .hover-box{
+    transform-origin: 100% 100%;
+    transform: rotateX(-90deg);
+}
+.event5:hover .imgBox{
+    transform: rotateX(90deg);
+    animation: event5Ani 0.5s linear 1;
+}
+.event5:hover .hover-box{
+    transform: rotateX(0deg);
+    animation: event5Ani2 0.8s linear 1;
+}
+@keyframes event5Ani1{
+    0%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateX(90deg);
+    }
+}
+@keyframes event5Ani2{
+    0%{
+        transform: rotateX(-90deg);
+    }
+    30%{
+        transform: rotateX(-90deg);
+    }
+    100%{
+        transform: rotateX(90deg);
+    }
+}
+.event6 .imgBox{
+    position: relative;
+}
+.event6 .hover-box{
+    opacity: 0;
+}
+.event6:hover .imgBox{
+    animation: event6Ani 0.6s linear 1;
+    left: -200px;
+
+}
+.event6:hover .hover-box{
+    animation: event6Ani2 0.6s linear 1;
+    opacity: 1;
+    
+}
+@keyframes event6Ani{
+    0%{
+        left: 0;
+        transform: scale(1,1);    
+    }
+    50%{
+        left: 0;
+        transform: scale(0.5,0.5);    
+    }
+    100%{
+        left: -200px;
+        transform: scale(0.5,0.5);    
+    }
+}
+@keyframes event6Ani2{
+    0%{
+        opacity: 0;
+        transform: scale(0.7 ,0.7);
+    }
+    60%{
+        opacity: 0;
+        transform: scale(0.7 ,0.7);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
+.event7 .hover-box span{
+    display: block;
+    border: 4px solid yellow;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 30px;
+    width: 80%;
+    left: 10%;
+    transition: 0.5s;
+}
+.event7 .hover-box span p{
+    opacity: 0;
+    text-align: center;
+    font-weight: 700;
+}
+.event7:hover .hover-box span{
+    animation: event7Ani 0.8s linear 1;
+    height: 150px;
+
+}
+.event7:hover .hover-box span p{
+    animation: event7Ani2 0.8s linear 1;
+    opacity: 1;
+}
+@keyframes event7Ani{
+    0%{
+        height: 30px;
+    }
+    80%{
+        height: 150px;
+    }
+    100%{
+        height: 150px;
+    }
+}
+@keyframes event7Ani2{
+    0%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.event8 .hover-box span p{
+    font-size: 20px;
+    font-weight: 700;
+}
+.event8 .hover-box span.span1{
+    position: absolute;
+    display: block;
+    top: -90px;
+    width: 120%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background-color: slateblue;
+    transition: 0.5s;
+    margin-top: 10px;
+    transform: rotate(10deg);
+}
+.event8 .hover-box span.span2{
+    display: block;
+    position: absolute;
+    bottom: -90px;
+    left: -40px;
+    text-align: center;
+    width: 120%;
+    height: 100px;
+    background-color: cornflowerblue;
+    transition: 0.5s;
+    transform: rotate(10deg);
+}
+.hover-box p.p2{
+    margin-top: 12px;
+}
+.event8:hover .hover-box span.span1{
+    top: -40px;
+}
+.event8:hover .hover-box span.span2{
+    bottom: -40px;
+}
